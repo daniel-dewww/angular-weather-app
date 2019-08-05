@@ -1,0 +1,85 @@
+
+<div class="container cont">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-body">
+        <img src="../assets/img/logo.png" alt="500" class="m-auto">
+      </div>
+    </div> 
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-body">
+        
+        <form (submit)="submitLocation(cityName)">
+          <input type="text" placeholder="City Name" class="form-control" autofocus #cityName>
+          
+          <button class="btn btn-primary btn-block mt-2">
+            Ok
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--  <div class="row">
+    <div class="col-md-12  ">
+      <div *ngIf="weather.main.temp > 16" class="card card-body text-center">
+        <h1 class="h4">Information</h1>
+        <p>Frio hace</p>
+        <p>City: {{weather.name}}</p> 
+        <p>Temperature:  {{weather.main.temp}} °C</p>
+      </div>
+      </div>
+    </div>-->
+
+  <!--
+  <div class="row">
+      
+      
+      <ng-template  [ngIf]="weather.main.temp < 10" [ngIfElse]="case2">
+          <p>City: {{weather.name}}</p> 
+          <p>Temperature:  {{weather.main.temp}} °C</p>
+          <p>Frio</p>
+      </ng-template>
+      <ng-template #case2 [ngIf]="weather.main.temp  <=11 && weather.main.temp >=25; else case3">
+          <p>City: {{weather.name}}</p> 
+          <p>Temperature:  {{weather.main.temp}} °C</p>
+          <p>Buena condición</p>
+      </ng-template> 
+      <ng-template #case3 [ngIf]="weather.main.temp  <=26 && weather.main.temp >=35" >
+          <p>City: {{weather.name}}</p> 
+          <p>Temperature:  {{weather.main.temp}} °C</p>
+          <p>Caluroso</p>
+      </ng-template> 
+
+    </div>-->
+    <div class="row">
+        <div class="col-md-12 ">
+            <div *ngIf="weather.main.temp < 10" class="card card-body text-center">
+              <h1 class="h4">Information</h1>
+              <p>Frio</p>
+              <p>City: {{weather.name}}</p> 
+              <p>Temperature:  {{weather.main.temp}} °C</p>
+              <p>Description: {{weather.weather[0].description}}</p>
+              
+            </div>
+            <div *ngIf="weather.main.temp >= 10 && weather.main.temp <= 23" class="card card-body text-center">
+                <h1 class="h4">Information</h1>
+                <p>Buen clima</p>
+                <p>City: {{weather.name}}</p> 
+                <p>Temperature:  {{weather.main.temp}} °C</p>
+                <p>Description: {{weather.weather[0].description}}</p>
+                
+              </div>
+              <div *ngIf="weather.main.temp >= 24 && weather.main.temp <= 35" class="card card-body text-center">
+                <h1 class="h4">Information</h1>
+                <p>Caluroso</p>
+                <p>City: {{weather.name}}</p> 
+                <p>Temperature:  {{weather.main.temp}} °C</p>
+                <p>Description: {{weather.weather[0].description}}</p>
+              
+              </div>
+            </div>
+    </div>
+</div>
+
